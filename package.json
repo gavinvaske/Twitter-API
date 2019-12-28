@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev:build": "docker-compose -f docker/app/docker-compose.dev.yml build",
+    "dev:run": "docker-compose -f docker/app/docker-compose.dev.yml up",
     "production:build": "./node_modules/.bin/babel app --out-dir dist --copy-files --extensions \".ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

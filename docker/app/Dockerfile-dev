@@ -1,0 +1,12 @@
+FROM node:10-alpine
+
+# for application
+EXPOSE 5000
+# for debugger 
+EXPOSE 9229 
+
+RUN mkdir -p /home/app/app
+ENV HOME=/home/app/app
+WORKDIR $HOME
+
+CMD npm run production:build && node dist/index.js
