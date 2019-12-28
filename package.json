@@ -1,0 +1,26 @@
+{
+  "name": "twitter-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "production:build": "./node_modules/.bin/babel app --out-dir dist --copy-files --extensions \".ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvwarrior/Twitter-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvwarrior/Twitter-API/issues"
+  },
+  "homepage": "https://github.com/gvwarrior/Twitter-API#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7"
+  }
+}
