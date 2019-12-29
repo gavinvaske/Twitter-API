@@ -74,3 +74,12 @@ It's recommended that while you are developing your tests you use the [Jest Runn
 This API is uses [apidoc](http://apidocjs.com/) for API documentation.
 
 It is pretty easy to use. View the [official docs](http://apidocjs.com/) on the templating language and generate them using `npm run generate:doc`. Docs are generated in the `doc/` directory.
+
+# Vocabulary Terms and Resources Explained
+
+ - Virtual Machine ("VM"): TODO
+ - Docker: TODO
+ - Docker Container: TODO
+ - Docer Image: TODO
+ - Middleware: TODO
+ 
