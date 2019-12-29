@@ -9,4 +9,4 @@ RUN mkdir -p /home/app/app
 ENV HOME=/home/app/app
 WORKDIR $HOME
 
-CMD npm run production:build && node dist/index.js
+CMD npm run production:build && node dist/server.js
