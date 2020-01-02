@@ -2,6 +2,9 @@
 
 Table of Contents
 - [Getting started](#getting-started)
+- [Development](#development)
+- [Services](#services)
+- [Tests](#tests)
 
 
 This repository contains a Restful network API that allows you to...
@@ -23,7 +26,7 @@ bundle install
 
 - Next, ....
 
-
+ <a id="development"></a>
 # Development
 
 _Warning: Make sure to follow the [getting started](#getting-started) section to configure your project before you try and run it locally._
@@ -41,7 +44,7 @@ npm run dev
 
 This will install everything you need, start up services such as Postgres, then start your node application.
 
-
+ <a id="services"></a>
 # Services
 
 
@@ -57,7 +60,7 @@ After your machine is setup for [development](#development), all you need to do 
 
 To debug your code, this project is setup to work with VSCode's built-in debugger. All you need to do is run the "Local development debug" task in VSCode and done! It will even reset the debugger and recompile your code on code change.
 
-
+ <a id="tests"></a>
 # Tests
 
 This project is setup to create and run unit and integration tests against your code base super easily. For information on how to _write_ tests, check out the `tests/` directory.
