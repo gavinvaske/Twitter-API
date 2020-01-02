@@ -1,6 +1,6 @@
 # Twitter-API
 
-Table of Contents
+## Table of Contents
 - [Getting started](#getting-started)
 - [Development](#development)
 - [Services](#services)
