@@ -1,5 +1,9 @@
 # Twitter-API
 
+Table of Contents
+- [Getting started](#getting-started)
+
+
 This repository contains a Restful network API that allows you to...
 
  - [ ] Post tweets to your logged in account. Tweets can only be 120 characters in length.
@@ -7,7 +11,7 @@ This repository contains a Restful network API that allows you to...
  - [ ] View most recent tweets that people have posted. 
  - [ ] Twitter was designed to be the place you told the world what you ate that day, how many miles you ran. It was pretty much a timeline for yourself. So, we will be doing the same. You will hook up your GitHub profile to your social media account in the API and every time that you push code up to the API's git repo, you will send a tweet to your profile. 
  
- 
+ <a id="getting-started"></a>
 # Getting started
 
 - First, clone this repo:
