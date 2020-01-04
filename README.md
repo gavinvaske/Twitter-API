@@ -29,6 +29,9 @@ bundle install
  <a id="development"></a>
 ## Development
 
+
+### Getting Started
+
 _Warning: Make sure to follow the [getting started](#getting-started) section to configure your project before you try and run it locally._
 
 Do you wish to build and run this application locally on your machine for development? Let's do it.
@@ -54,7 +57,6 @@ https://github.com/gvwarrior/Twitter-API
 
  <a id="services"></a>
 ## Services
-
 
 ### Contribute code to the repository
 
