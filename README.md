@@ -44,6 +44,14 @@ npm run dev
 
 This will install everything you need, start up services such as Postgres, then start your node application.
 
+### Generating API Docs
+
+To automagically generate API documentation - run the following command in the root directory of the project.
+
+```
+https://github.com/gvwarrior/Twitter-API
+```
+
  <a id="services"></a>
 ## Services
 
