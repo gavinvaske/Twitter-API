@@ -1,5 +1,12 @@
 # Twitter-API
 
+## Table of Contents
+- [Getting started](#getting-started)
+- [Development](#development)
+- [Services](#services)
+- [Tests](#tests)
+
+
 This repository contains a Restful network API that allows you to...
 
  - [ ] Post tweets to your logged in account. Tweets can only be 120 characters in length.
@@ -7,8 +14,8 @@ This repository contains a Restful network API that allows you to...
  - [ ] View most recent tweets that people have posted. 
  - [ ] Twitter was designed to be the place you told the world what you ate that day, how many miles you ran. It was pretty much a timeline for yourself. So, we will be doing the same. You will hook up your GitHub profile to your social media account in the API and every time that you push code up to the API's git repo, you will send a tweet to your profile. 
  
- 
-# Getting started
+ <a id="getting-started"></a>
+## Getting started
 
 - First, clone this repo:
 
@@ -19,8 +26,11 @@ bundle install
 
 - Next, ....
 
+ <a id="development"></a>
+## Development
 
-# Development
+
+### Getting Started
 
 _Warning: Make sure to follow the [getting started](#getting-started) section to configure your project before you try and run it locally._
 
@@ -37,11 +47,18 @@ npm run dev
 
 This will install everything you need, start up services such as Postgres, then start your node application.
 
+### Generating API Docs
 
-# Services
+To automagically generate API documentation - run the following command in the root directory of the project.
 
+```
+https://github.com/gvwarrior/Twitter-API
+```
 
-## Contribute code to the repository
+ <a id="services"></a>
+## Services
+
+### Contribute code to the repository
 
 After your machine is setup for [development](#development), all you need to do is follow these steps:
 
@@ -53,8 +70,8 @@ After your machine is setup for [development](#development), all you need to do 
 
 To debug your code, this project is setup to work with VSCode's built-in debugger. All you need to do is run the "Local development debug" task in VSCode and done! It will even reset the debugger and recompile your code on code change.
 
-
-# Tests
+ <a id="tests"></a>
+## Tests
 
 This project is setup to create and run unit and integration tests against your code base super easily. For information on how to _write_ tests, check out the `tests/` directory.
 
@@ -67,15 +84,15 @@ This will run all of your unit and integration tests.
 
 It's recommended that while you are developing your tests you use the [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) VSCode extension for when you want to run or debug individual tests.
 
-# Deploy (TODO)
+## Deploy (TODO)
 
-# Documentation
+## Documentation
 
 This API is uses [apidoc](http://apidocjs.com/) for API documentation.
 
 It is pretty easy to use. View the [official docs](http://apidocjs.com/) on the templating language and generate them using `npm run generate:doc`. Docs are generated in the `doc/` directory.
 
-# Vocabulary Terms and Resources Explained
+## Vocabulary Terms and Resources Explained
 
  - Virtual Machine ("VM"): TODO
  - Docker: TODO
