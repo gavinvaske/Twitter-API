@@ -1,11 +1,24 @@
 import express from "express"
-import { AddressInfo } from "net"
+import { AddressInfo, createConnection } from "net"
 import controllers from "./controller"
+import { Sequelize, Model, DataTypes, BuildOptions } from "sequelize"
 
+const db = require("./config/database")
 const app = express()
 
-app.set("port", 5000)
+app.set("port", process.env.PORT || 5000)
 app.use(controllers)
+
+// const sequelize = new Sequelize(process.env.DATABASE_URL);
+
+/* Test database connection */
+db.authenticate()
+  .then(() => {
+    console.log("DB connection SUCCESSFUL.")
+  })
+  .catch((err: Error) => {
+    console.error("DB connection FAILED.", err)
+  })
 
 const server = app.listen(app.get("port"), () => {
   console.log(
