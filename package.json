@@ -14,11 +14,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run dev:lint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{ts,js,json,css,md}": [
+      "apidoc -i app/ -o docs/apidoc",
       "npm run format",
       "git add"
     ]
