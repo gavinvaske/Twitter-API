@@ -15,10 +15,15 @@
       "pre-commit": "lint-staged"
     }
   },
+  "test-test": {
+    "*.{ts,js,json,css,md}": [
+      "apidoc -i app/ -o docs/apidoc",
+      "git add"
+    ]
+  },
   "lint-staged": {
     "*.{ts,js,json,css,md}": [
       "npm run format",
-      "apidoc -i app/ -o docs/apidoc",
       "git add"
     ]
   },

@@ -1,8 +1,5 @@
 {
-  "*.{ts,js,json,css,md}": [
-    "npm run format",
-    "git add"
-  ],
+  "*.{ts,js,json,css,md}": ["npm run format", "git add"],
   "name": "Twitter API",
   "version": "0.0.1",
   "description": "Mock twitter API",
@@ -13,7 +10,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-01-07T22:36:43.831Z",
+    "time": "2020-01-07T22:39:24.510Z",
     "url": "http://apidocjs.com",
     "version": "0.19.1"
   }
