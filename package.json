@@ -18,6 +18,7 @@
   "lint-staged": {
     "*.{ts,js,json,css,md}": [
       "npm run format",
+      "apidoc -i app/ -o docs/apidoc",
       "git add"
     ]
   },
