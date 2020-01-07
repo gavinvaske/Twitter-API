@@ -9,11 +9,12 @@
     "production:build": "./node_modules/.bin/babel app --out-dir dist --copy-files --extensions \".ts\"",
     "format": "./node_modules/.bin/prettier --write \"{app,test}/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:lint": "lint-staged"
+    "dev:lint": "lint-staged",
+    "dev:generate-docs": "lint-staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run dev:lint"
+      "pre-commit": "npm run dev:generate-docs"
     }
   },
   "lint-staged": {
