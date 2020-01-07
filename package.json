@@ -10,11 +10,11 @@
     "format": "./node_modules/.bin/prettier --write \"{app,test}/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:lint": "lint-staged",
-    "dev:generate-docs": "lint-staged"
+    "dev:generate-docs": "apidoc"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run dev:generate-docs"
+      "pre-commit": "npm run dev:lint"
     }
   },
   "lint-staged": {
