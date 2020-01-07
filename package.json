@@ -8,11 +8,12 @@
     "dev:run": "docker-compose -f docker/app/docker-compose.dev.yml up",
     "production:build": "./node_modules/.bin/babel app --out-dir dist --copy-files --extensions \".ts\"",
     "format": "./node_modules/.bin/prettier --write \"{app,test}/**/*.ts\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:lint": "lint-staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run dev:lint"
     }
   },
   "lint-staged": {
