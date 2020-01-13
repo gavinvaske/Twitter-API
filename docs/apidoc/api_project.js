@@ -1,5 +1,5 @@
 define({
-  "*.{ts,js,json,css,md}": ["npm run format", "git add"],
+  "*.{ts,js,json,css,md}": ["apidoc -i app/ -o docs/apidoc", "git add"],
   name: "Twitter API",
   version: "0.0.1",
   description: "Mock twitter API",
@@ -10,7 +10,7 @@ define({
   apidoc: "0.3.0",
   generator: {
     name: "apidoc",
-    time: "2020-01-07T22:39:24.510Z",
+    time: "2020-01-13T22:25:01.553Z",
     url: "http://apidocjs.com",
     version: "0.19.1",
   },
