@@ -1,8 +1,22 @@
 {
-    "presets": [["@babel/env", {
-        "targets": {
-          "node": "current"
+  "presets": [["@babel/env", {
+    "targets": {
+      "node": "current"
+    }
+    }], "@babel/preset-typescript"],  
+    "plugins": [
+      ["module-resolver", {
+        "root": ["."],
+        "alias": {
+          "@app": "./app",
+          "@test": "./tests"
         }
-      }], "@babel/preset-typescript"],
-    "retainLines": true
-  }
+        }]
+      ],
+      "env": {
+        "debug": {
+          "sourceMaps": "inline",
+          "retainLines": true
+        }
+      }
+    }
