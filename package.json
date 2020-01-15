@@ -10,7 +10,8 @@
     "format": "./node_modules/.bin/prettier --write \"{app,test}/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:lint": "lint-staged",
-    "dev:generate-docs": "apidoc"
+    "dev:generate-docs": "apidoc",
+    "dev:run-migration": "npx sequelize-cli db:migrate"
   },
   "husky": {
     "hooks": {
