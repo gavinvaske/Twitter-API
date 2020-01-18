@@ -26,7 +26,9 @@ module.exports = db.define(
   {
     /* attributes */
     message: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [0, 140], // only allow values with length between 0 and 140
     },
   },
   {
