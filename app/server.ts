@@ -3,15 +3,18 @@ import { AddressInfo, createConnection } from "net"
 import controllers from "./controller"
 import { Sequelize, Model, DataTypes, BuildOptions } from "sequelize"
 
-const db = require("./config/database")
+/* root application controller */
 const app = express()
-
-// data models
-// const user = require('./models/User')
-
-app.set("port", process.env.PORT || 5000)
+/* import models */
+const TweetModel = require("./models/tweet")
+/* import controllers */
 app.use(controllers)
+/* get connection to database */
+const db = require("./config/database")
+/* define port for server to listen on */
+app.set("port", process.env.PORT || 5000)
 
+/* start server on specified port */
 function runServer() {
   const server = app.listen(app.get("port"), () => {
     console.log(
@@ -23,9 +26,10 @@ function runServer() {
   })
 }
 
-async function initDatabase() {
+/* synchronizes all 'sequelize' models database and optionally resets database */
+async function initDatabase(shouldResetDb: Boolean) {
   await db
-    .sync({})
+    .sync({ force: shouldResetDb })
     .then(() => {
       console.log("Synchronized database")
     })
@@ -34,43 +38,34 @@ async function initDatabase() {
     })
 }
 
-function testDatabaseConnection() {
-  db.authenticate()
-    .then(() => {
-      console.log("DB connection SUCCESSFUL.")
-    })
-    .catch((err: Error) => {
-      console.error("[ERROR][testDatabaseConnection()] -> ", err)
-    })
+/* verifies database connection is active */
+async function testDatabaseConnection() {
+  try {
+    await db.authenticate()
+    console.log("Connection has been established successfully.")
+  } catch (error) {
+    console.error("Unable to connect to the database:", error)
+  }
 }
 
-initDatabase()
-runServer()
+/* main server function */
+;(async () => {
+  await db.sync({ force: true })
+  runServer()
 
-// /* Test database connection */
-// db.authenticate()
-//   .then(() => {
-//     console.log("DB connection SUCCESSFUL.")
-//   })
-//   .catch((err: Error) => {
-//     console.error("DB connection FAILED.", err)
-//   })
+  /* create and save a tweet to database (used for testing) */
+  await TweetModel.create({ message: "this is a new world wide test!!" })
+    .then(() => {
+      console.log("after created and saved new model")
+    })
+    .catch((error: Error) => {
+      console.log(error)
+    })
 
-//// TESTING START -> 1/15/2019 ////
-
-const tweet = require("./models/tweet")
-// tweet.findAll().then(() => {
-//   console.log("After test.findAll()")
-// })
-tweet
-  .create({
-    message: "holly shit! This is sick",
+  /* fetch 20 tweets */
+  TweetModel.findAll({
+    limit: 20,
+  }).then((tweets: [Model]) => {
+    console.log(JSON.stringify(tweets))
   })
-  .then(() => {
-    console.log("test model SUCCEEDED")
-  })
-  .catch(() => {
-    console.log("test model FAILED")
-  })
-
-////////////////////////////////////
+})()
