@@ -100,3 +100,11 @@ It is pretty easy to use. View the [official docs](http://apidocjs.com/) on the 
  - Docer Image: TODO
  - Middleware: TODO
  
+ 
+## Resources
+
+### Libraries 
+  - **Bcrypt** : Hashes passwords so they may be securely stored in database
+  - **uid2** : Generates random strings (Used to generate auth tokens)
+
+ 
