@@ -11,7 +11,11 @@ const router = Router()
  * @apiParam {Number} id Users unique ID.
  *
  */
-router.post("/tweet/save/:userId", controller.saveTweet)
-router.get("/tweet/:id", controller.getTweet)
+router.post("/save/:userId", controller.saveTweet)
+
+router.get("/", (req, res) => {
+  res.send("Welcome to the TWEETS endpoint")
+})
+router.get("/:id", controller.getTweet)
 
 export default router

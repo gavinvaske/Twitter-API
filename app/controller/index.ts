@@ -1,18 +1,13 @@
 import { Router } from "express"
-import helloRouter from "./routes/hello"
 import tweetRouter from "./routes/tweet"
-import sessionRouter from "./routes/session"
+import userRouter from "./routes/users"
+import indexRouter from "./routes/index"
 
 const router = Router()
 
 // route handlers
-router.use(helloRouter)
-router.use(tweetRouter)
-router.use(sessionRouter)
-
-/* base route */
-router.get("/", (req, res) => {
-  res.send("Welcome to the Twitter API")
-})
+router.use("/", indexRouter)
+router.use("/tweets", tweetRouter)
+router.use("/users", userRouter)
 
 export default router

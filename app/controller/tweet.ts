@@ -1,5 +1,14 @@
 import { Request, Response, NextFunction } from "express"
 
+/* Crud function (Create, Read, Update, Delete)
+ * new
+ * show
+ * index
+ * create
+ * destroy
+ * Maybe (update/edit)
+ */
+
 export const saveTweet = (req: Request, res: Response, next: NextFunction) => {
   let userId = req.params.userId
   let tweet = req.query.tweet

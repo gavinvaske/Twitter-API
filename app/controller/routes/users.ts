@@ -1,5 +1,5 @@
 import { Router } from "express"
-import * as controller from "../session"
+import * as controller from "../users"
 
 const router = Router()
 
@@ -9,6 +9,7 @@ const router = Router()
  */
 router.get("/login", controller.getLoginForm)
 router.get("/signup", controller.getSignupForm)
+
 router.post("/login", controller.login)
 router.post("/signup", controller.signup)
 

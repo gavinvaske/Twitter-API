@@ -2,17 +2,22 @@ import express from "express"
 import { AddressInfo, createConnection } from "net"
 import controllers from "./controller"
 import { Sequelize, Model, DataTypes, BuildOptions } from "sequelize"
+import passport from "passport"
+import BearerStrategy from "passport-http-bearer"
 
 /* root application controller */
 const app = express()
 /* import models */
 const TweetModel = require("./models/tweet")
+const UserModel = require("./models/user")
 /* import controllers */
 app.use(controllers)
 /* get connection to database */
 const db = require("./config/database")
 /* define port for server to listen on */
 app.set("port", process.env.PORT || 5000)
+/* use passport middleware for authentication */
+app.use(passport.initialize())
 
 /* start server on specified port */
 function runServer() {
@@ -60,6 +65,18 @@ async function testDatabaseConnection() {
     })
     .catch((error: Error) => {
       console.log(error)
+    })
+  /* create and save a tweet to database (used for testing) */
+  await UserModel.create({
+    name: "test-name",
+    email: "test@gmail.com",
+    password: "password",
+  })
+    .then(() => {
+      console.log("created user SUCCESS!")
+    })
+    .catch((error: Error) => {
+      console.log("created user ERROR!")
     })
 
   /* fetch 20 tweets */
