@@ -1,5 +1,5 @@
 import { Router } from "express"
-import * as controller from "../tweet"
+import * as controller from "../tweets"
 import passport from "passport"
 import { Strategy as BearerStrategy } from "passport-http-bearer"
 

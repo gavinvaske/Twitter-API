@@ -19,7 +19,7 @@
       }
     },
     "version": "0.0.0",
-    "filename": "app/controller/routes/tweet.ts",
+    "filename": "app/controller/routes/tweets.ts",
     "groupTitle": "Tweet"
   }
 ]
