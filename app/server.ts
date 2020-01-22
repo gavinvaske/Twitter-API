@@ -3,7 +3,7 @@ import { AddressInfo, createConnection } from "net"
 import controllers from "./controller"
 import { Sequelize, Model, DataTypes, BuildOptions } from "sequelize"
 import passport from "passport"
-import BearerStrategy from "passport-http-bearer"
+import "./middleware/auth"
 
 /* root application controller */
 const app = express()

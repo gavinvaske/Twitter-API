@@ -1,5 +1,5 @@
 import { Router } from "express"
-import tweetRouter from "./routes/tweet"
+import tweetRouter from "./routes/tweets"
 import userRouter from "./routes/users"
 import indexRouter from "./routes/index"
 
