@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express"
-
+import * as tweetService from "../services/tweetService"
+import * as authService from "../services/authService"
 /* Crud function (Create, Read, Update, Delete)
  * new
  * show
