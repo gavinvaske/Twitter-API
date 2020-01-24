@@ -10,6 +10,7 @@ const app = express()
 /* import models */
 const TweetModel = require("./models/tweet")
 const UserModel = require("./models/user")
+const AuthToken = require("./models/authtoken")
 /* import controllers */
 app.use(controllers)
 /* get connection to database */
@@ -78,6 +79,19 @@ async function testDatabaseConnection() {
     .catch((error: Error) => {
       console.log("created user ERROR!")
     })
+  /* create and save a auth token to database (used for testing) */
+  await AuthToken.create({
+    token: "696969696969",
+  })
+    .then(() => {
+      console.log("created auth-token SUCCESS!")
+    })
+    .catch((error: Error) => {
+      console.log("created auth-token ERROR!")
+    })
+  let plainText = "this is test"
+  let saltRounds = 10
+  console.log("Before hash => " + plainText)
 
   /* fetch 20 tweets */
   TweetModel.findAll({

@@ -1,6 +1,21 @@
 const db = require("../config/database")
 const { Sequelize, DataTypes, Model } = require("sequelize")
 
+module.exports = db.define(
+  "tweet",
+  {
+    /* attributes */
+    message: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [0, 140], // only allow values with length between 0 and 140
+    },
+  },
+  {
+    /* options */
+  }
+)
+
 // const sequelize = new Sequelize(process.env.DATABASE_URL);
 // class tweet extends Model {
 //   test() {
@@ -20,18 +35,3 @@ const { Sequelize, DataTypes, Model } = require("sequelize")
 // }, { sequelize });
 
 // module.exports = tweet
-
-module.exports = db.define(
-  "tweet",
-  {
-    /* attributes */
-    message: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      len: [0, 140], // only allow values with length between 0 and 140
-    },
-  },
-  {
-    /* options */
-  }
-)
