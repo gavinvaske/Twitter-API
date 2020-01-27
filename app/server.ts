@@ -82,7 +82,7 @@ async function testDatabaseConnection() {
     })
   /* create and save a auth token to database (used for testing) */
   await AuthToken.create({
-    token: "696969696969",
+    token: "1234567890",
   })
     .then(() => {
       console.log("created auth-token SUCCESS!")
