@@ -22,6 +22,9 @@ module.exports = db.define(
       type: DataTypes.DATE,
       defaultValue: Sequelize.NOW,
     },
+    token: {
+      type: DataTypes.STRING,
+    },
   },
   {
     /* options */

@@ -73,6 +73,7 @@ async function testDatabaseConnection() {
     name: "test-name",
     email: "test@gmail.com",
     password: "password",
+    token: "12345",
   })
     .then(() => {
       console.log("created user SUCCESS!")
@@ -90,9 +91,6 @@ async function testDatabaseConnection() {
     .catch((error: Error) => {
       console.log("created auth-token ERROR!")
     })
-  let plainText = "this is test"
-  let saltRounds = 10
-  console.log("Before hash => " + plainText)
 
   await helpers.uidGenerator(255)
   await helpers.getTweets(20)
