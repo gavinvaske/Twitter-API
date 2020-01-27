@@ -4,6 +4,7 @@ import controllers from "./controller"
 import { Sequelize, Model, DataTypes, BuildOptions } from "sequelize"
 import passport from "passport"
 import "./middleware/auth"
+import * as helpers from "./helpers"
 
 /* root application controller */
 const app = express()
@@ -93,10 +94,7 @@ async function testDatabaseConnection() {
   let saltRounds = 10
   console.log("Before hash => " + plainText)
 
-  /* fetch 20 tweets */
-  TweetModel.findAll({
-    limit: 20,
-  }).then((tweets: [Model]) => {
-    console.log(JSON.stringify(tweets))
-  })
+  await helpers.uidGenerator(255)
+  await helpers.getTweets(20)
+  await helpers.getUsers(10)
 })()
