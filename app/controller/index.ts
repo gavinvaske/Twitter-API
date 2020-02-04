@@ -5,7 +5,7 @@ import indexRouter from "./routes/index"
 
 const router = Router()
 
-// route handlers
+// base endpoints
 router.use("/", indexRouter)
 router.use("/tweets", tweetRouter)
 router.use("/users", userRouter)

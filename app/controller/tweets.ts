@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express"
-import * as tweetService from "../services/tweetService"
-import * as authService from "../services/authService"
+// import * as tweetService from "../helpers/tweets" // Marked for deletion
+// import * as authService from "../helpers/auth" // Marked for deletion
+
 /* Crud function (Create, Read, Update, Delete)
  * new
  * show
@@ -25,4 +26,8 @@ export const getTweet = (req: Request, res: Response, next: NextFunction) => {
   let id = req.query.id
   let response = { tweet: String("Tweet ID = " + id) }
   res.send(response)
+}
+
+export const index = (req: Request, res: Response, next: NextFunction) => {
+  res.send("Welcome to the \tweets endpoint")
 }

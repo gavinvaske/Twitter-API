@@ -26,9 +26,7 @@ router.post(
   controller.saveTweet
 )
 
-router.get("/", (req, res) => {
-  res.send("Welcome to the TWEETS endpoint")
-})
+router.get("/", controller.index)
 router.get("/:id", controller.getTweet)
 
 export default router

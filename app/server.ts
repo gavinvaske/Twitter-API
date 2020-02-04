@@ -16,6 +16,9 @@ const AuthToken = require("./models/authtoken")
 app.use(controllers)
 /* get connection to database */
 const db = require("./config/database")
+const env = require("dotenv")
+/* parse variables within .env file */
+env.config()
 /* define port for server to listen on */
 app.set("port", process.env.PORT || 5000)
 /* use passport middleware for authentication */
