@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from "express"
 import { Model } from "sequelize/types"
-import { resolveSoa } from "dns"
 var request = require("request")
 
 /* user model */

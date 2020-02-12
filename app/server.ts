@@ -6,23 +6,19 @@ import passport from "passport"
 import "./middleware/auth"
 import * as helpers from "./helpers"
 
-/* root application controller */
-const app = express()
-/* import models */
-const TweetModel = require("./models/tweet")
-const UserModel = require("./models/user")
-const AuthToken = require("./models/authtoken")
-/* import controllers */
-app.use(controllers)
-/* get connection to database */
-const db = require("./config/database")
-const env = require("dotenv")
-/* parse variables within .env file */
-env.config()
-/* define port for server to listen on */
-app.set("port", process.env.PORT || 5000)
-/* use passport middleware for authentication */
-app.use(passport.initialize())
+/* initialize constants */
+const app = express(),
+  FacebookStrategy = require("passport-facebook").Strategy,
+  db = require("./config/database"),
+  env = require("dotenv"),
+  TweetModel = require("./models/tweet"), // Tweet database Model
+  UserModel = require("./models/user"), // User database Model
+  AuthToken = require("./models/authtoken") // AuthToken database model
+
+app.use(controllers) // load controllers
+env.config() // read in variables from ".env" file
+app.set("port", process.env.PORT || 5000) // set port for server to listen on
+app.use(passport.initialize()) // initialize passport (3rd party authentication library)
 
 /* start server on specified port */
 function runServer() {
