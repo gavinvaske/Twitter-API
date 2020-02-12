@@ -5,6 +5,7 @@ import { Sequelize, Model, DataTypes, BuildOptions } from "sequelize"
 import passport from "passport"
 import "./middleware/auth"
 import * as helpers from "./helpers"
+import { Profile } from "passport-facebook"
 
 /* initialize constants */
 const app = express(),
@@ -19,6 +20,37 @@ app.use(controllers) // load controllers
 env.config() // read in variables from ".env" file
 app.set("port", process.env.PORT || 5000) // set port for server to listen on
 app.use(passport.initialize()) // initialize passport (3rd party authentication library)
+
+// Passport session setup.
+passport.serializeUser(function(user, done) {
+  done(null, user)
+})
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj)
+})
+
+// Use the FacebookStrategy within Passport.
+
+passport.use(
+  new FacebookStrategy(
+    {
+      clientID: "xxxx",
+      clientSecret: "xxx",
+      callbackURL: "xxxx",
+    },
+    function(
+      accessToken: string,
+      refreshToken: string,
+      profile: Profile,
+      done: (error: any, user?: any, info?: any) => void
+    ) {
+      process.nextTick(function() {
+        return done(null, profile)
+      })
+    }
+  )
+)
 
 /* start server on specified port */
 function runServer() {
